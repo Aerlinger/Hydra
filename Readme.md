@@ -1,4 +1,4 @@
-# Medusa
+# Hydra
 
 A lightweight paradigm for Distributed Computing
 
@@ -19,7 +19,7 @@ defined with a "broad brush" such that specific solutions and strategies can be 
 ##[[TOC]]
 
   I. A Background
-    1. What is Medusa?
+    1. What is Hydra?
     1. Definition of the Problem
     1. A quick summary of the past and present state of distributed
        numerical computation
@@ -70,4 +70,61 @@ defined with a "broad brush" such that specific solutions and strategies can be 
     1. Analytical processing
 
   IV. References
+
+
+# Why?
+
+As the volume of data grow at an exponential rate every year,
+there has been an increasing demand for distributed computation. The
+current de-facto platform for processing 
+
+ - An algorithm is an abstraction. It should be testable and able to be
+developed on a single machine or a cluster. 
+
+
+# The problem
+
+The design and deployment of distributed algorithms is becoming
+increasingly complex as the size of data grow. Existing solutions, such
+as Hadoop and Storm, are powerful and flexible at scale but are
+difficult to configure, test, deploy. Furthermore, such technologies are
+beholden to old methods and techniques of development (Ex. Java, XML). 
+
+# Interoperability between small and large data.
+
+At present, data analysis is generally performed in two distinct steps.
+First,   
+
+  - Decouple an algorithm's implementation from the data it processes.
+    1. Design and test an algorithm in a local environment on a local
+machine using a subset of the overall data to be processed.
+    2. Simulate a distributed environment locally through multiple
+processes running in parallel. (Something like a reactor pattern [REF]).
+Processes are an abstraction, it doesn't matter if they run on a single
+machine or across a network.
+
+  - Bridge the gap between tools used for data analysis at small scale
+(R, IPython, Excel, Matlab) and those used at massive scale (Hadoop,
+Storm, etc.)
+    - How? An algorithms is an abstraction. Decouple the implementation
+of an algorithm from the data it acts on. Why should separate toolsets
+be used 
+
+##Monetization opportunity:
+  - Open source software
+  - Platform as a service
+
+
+
+   
+
+
+I. Data analysis and exploration
+
+  a. Python/IPython
+  b. R
+  c. Matlab
+
+I. Data analysis at scale
+  a. Hadoop
 
