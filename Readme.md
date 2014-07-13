@@ -1,22 +1,27 @@
 # Hydra
 
-A lightweight paradigm for Distributed Computing
+A lightweight and dynamic toolset for Distributed Computing
 
 
 ##### Anthony Erlinger
 ######  v0.0.0 (2104/7/2)
 
 
-Hydra is a dynamic, lightweight paradigm for developing massively
-parallel algorithms. At a high level, Hydra
+## Abstract
+
+Hydra is a lightweight and dynamic framework built with the purpose 
+of simplifying the design, development, testing, 
+and deployment of large-scale distributed algorithms. This is
+accomplished by providing a rich development environment focused 
+on ease of integration on a local machine.
 
 
-#### A quick note
+##### A quick note
 
-This document was written in a sort of free form format to get
-thoughts onto "paper" so to speak. Much if it is still being refined and
-is subject to change. The problems/solutions/implementations discussed are all
-defined with a "broad brush" such that specific solutions and strategies can be isolated.
+> This document was written in a sort of free form format to get
+> thoughts onto "paper" so to speak. Much if it is still being refined and
+> is subject to change. The problems/solutions/implementations discussed are all
+> defined with a "broad brush" such that specific solutions and strategies can be isolated.
 
 
 ##TOC
@@ -78,16 +83,79 @@ defined with a "broad brush" such that specific solutions and strategies can be 
 
 # Motivation
 
+**Summary:** Two camps for data analysis: Those that are used by people REMPE (R, Excel, Matlab,
+Python, Etc.) and those that Hadoop/Mapreduce. Both of which
+take a different approach for different reasons. Hadoop scales to
+"arbitrarily large" datasets by splitting the work across multiple
+machines (embarrassingly parallel). REMPE is much simpler, but more
+flexible for small datasets. REMPE runs in a single process
+(usually) within a single thread.
 
-Bridge the gap between the development and deployment of massively parallel algorithms
-and deploying them on a virtual cluster of machines. Conventional tools
-used for 
+###### Why use a different approach for small and large scale?
 
-Modern datasets are often too large to practically handle on a single
-machine. 
+REMP is limited in usefulness and utility due to
+limitations in its design for handling datasets that are anything other
+than very small by today's standards (hundreds of thousands to millions
+of datapoints).
 
-R, Excel, Matlab, and Python (henceforth to be referred to as 'REMP')
-are among the most popular:wq
+##### Solution: Split data across a multi-process architecture
+
+Hadoop/Mapreduce is limited by unnecessary complexity complexity of
+deployment and lack of consistency with REMP. 
+oo
+
+
+
+---
+
+As the size and complexity of data grows exponentially every year, so does the
+technology intended to process, manage and analyze said data. Modern
+hardware, software, and network infrastructure have adapted to
+accomodate the demand for "Big Data," yet the techniques and methods
+used for large scale analysis and computation remain monolithic and
+difficult to develop and use.
+
+This is made apparent by the asymmetry in software and languages used by analysts for
+processing data and the software that ultimately gets deployed in a
+production environment. For instance, a data analyst spends the
+majority of his/her time preprocessing and
+"wrangling" a dataset on a workstation using something like R, Excel,
+Matlab, Python, etc (Henceforth to be called REMPE). The limitations of
+such languages and programs are reflected by their age. None of them
+were ever intended to process large datasets and certainly none of them
+were intended to be able to run on and certainly none of them were
+indended to run in an environment on multiple machines.
+
+To accommodate for these need, a paradigm called "Map Reduce" was
+developed at Google. The most common mapreduce framework in existence
+today is known as Hadoop.
+
+
+For the past twenty years there has been a exponential growth in the
+amount of data produced every year. In turn, there has been a variety of
+technologies at the hardware, software, and infrastructural level
+developed with the 
+
+Modern datasets are often too large to be effectively processed. 
+As such, a common practice is to download a small subset of the
+full data and analyze it within a program on a single worstation
+machine. There are several such programs regularly used for this
+purpose. Most prominent amongst these data analysis programs and
+languages are are R, Excel, Matlab, and Python (henceforth to be referred to as 'REMP').
+
+Of course, a single workstation machine has neither the computing power
+
+In practice, "Big data" algorithms are developed in a series of discrete
+steps. 
+
+  - Querying the data
+  - Filtering the data
+    - Outlier removal
+    - Type inference and structure
+    - 
+  - Meta-analysis
+    - Inferring the structure of the schema
+
 
 
 
@@ -96,6 +164,8 @@ are among the most popular:wq
 As the volume of data grow at an exponential rate every year,
 there has been an increasing demand for distributed computation. The
 current de-facto platform for processing 
+
+A shift from 
 
  - An algorithm is an abstraction. It should be testable and able to be
 developed on a single machine or a cluster. 
@@ -135,14 +205,3 @@ be used
   - 
 
 
-I. Data analysis and exploration
-
-  a. R
-  b. E
-  a. Python/IPython
-  c. Matlab
-
-I. Data analysis at scale
-  a. Hadoop
-
-Acronym: REMP (R Excel Matlab Perl)
