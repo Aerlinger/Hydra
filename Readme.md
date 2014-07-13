@@ -2,13 +2,16 @@
 
 A lightweight paradigm for Distributed Computing
 
-#### Anthony Erlinger
-```
-v0.0.0 (2104/7/2)
-```
+
+##### Anthony Erlinger
+######  v0.0.0 (2104/7/2)
 
 
-### A quick note
+Hydra is a dynamic, lightweight paradigm for developing massively
+parallel algorithms. At a high level, Hydra
+
+
+#### A quick note
 
 This document was written in a sort of free form format to get
 thoughts onto "paper" so to speak. Much if it is still being refined and
@@ -16,7 +19,7 @@ is subject to change. The problems/solutions/implementations discussed are all
 defined with a "broad brush" such that specific solutions and strategies can be isolated.
 
 
-##[[TOC]]
+##TOC
 
   I. A Background
     1. What is Hydra?
@@ -38,6 +41,7 @@ defined with a "broad brush" such that specific solutions and strategies can be 
         1. Structured vs. Unstructured
         1. Small vs. Large
         1. Local vs. Remote
+        1. 
     1. Functional vs. OO for distributed computing
       - Statelessness
       - "Fit" with Mapreduce
@@ -70,6 +74,21 @@ defined with a "broad brush" such that specific solutions and strategies can be 
     1. Analytical processing
 
   IV. References
+
+
+# Motivation
+
+
+Bridge the gap between the development and deployment of massively parallel algorithms
+and deploying them on a virtual cluster of machines. Conventional tools
+used for 
+
+Modern datasets are often too large to practically handle on a single
+machine. 
+
+R, Excel, Matlab, and Python (henceforth to be referred to as 'REMP')
+are among the most popular:wq
+
 
 
 # Why?
@@ -113,18 +132,17 @@ be used
 ##Monetization opportunity:
   - Open source software
   - Platform as a service
-
-
-
-   
+  - 
 
 
 I. Data analysis and exploration
 
+  a. R
+  b. E
   a. Python/IPython
-  b. R
   c. Matlab
 
 I. Data analysis at scale
   a. Hadoop
 
+Acronym: REMP (R Excel Matlab Perl)
